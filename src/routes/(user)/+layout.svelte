@@ -18,7 +18,7 @@
 
 <!-- Refer to the Skeleton Documentation to know what the following components are for. -->
 <AppShell class="bg-surface-500">
-    <!-- <AppRail
+    <AppRail
         slot="sidebarLeft"
         width="w-28"
         gap="gap-5"
@@ -39,8 +39,8 @@
 
         <AppRailAnchor href="../../" slot="trail">
             <span class="text-sm">Log-out</span>
-        </AppRailAnchor> -->
-    <!-- </AppRail> -->
+        </AppRailAnchor>
+    </AppRail>
 
     <!-- Router Slot -->
     <slot />

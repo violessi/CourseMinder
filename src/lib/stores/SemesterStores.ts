@@ -36,6 +36,7 @@ function initStore() {
         // Check if data for the semester already exists
         const snapshot = await getFirebase(semesterRef);
         if (snapshot.exists()) {
+            console.log('Semester already exists');
             return true;
         } else {
             return false;
@@ -51,7 +52,7 @@ function initStore() {
     }
 
     function addSem({ sem, year }: AddSem) {
-        const obg = {
+        const obg : Semester = {
             id: `${sem} ${year}`,
             details: {
                 sem,
@@ -60,8 +61,9 @@ function initStore() {
                 units: null,
             },
             subjects: [],
-        } satisfies Semester;
+        };
         const semesterRef = ref(db, `semesterData/${studentnumber}/${obg.id}`);
+        console.log('got semester reference')
         writeSemesterData(semesterRef, obg);                  
         update((store) => [...store, obg]);
     }
