@@ -9,7 +9,7 @@ export const actions = {
 
         if (email === '2020@12345' && password === 'password') {
             cookies.set('access', 'true', { path: '/', sameSite: 'strict' });
-            throw redirect(302, '/student/dashboard');
+            //throw redirect(302, '/student/dashboard');
         }
 
         return {

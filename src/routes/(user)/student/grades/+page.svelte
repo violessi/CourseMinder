@@ -5,9 +5,25 @@
     import { Modal, getModalStore } from '@skeletonlabs/skeleton';
     import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
     import AddSem from '$lib/components/AddSem.svelte';
+    import { initializeApp } from 'firebase/app';
+    import { getDatabase } from 'firebase/database';
+
+    const firebaseConfig = {
+    apiKey: 'AIzaSyCmwpRzGyoeD-Xuh6Cuh1Agbsxw31Uekhk',
+    authDomain: 'courseminder-dev.firebaseapp.com',
+    databaseURL: 'https://courseminder-dev-default-rtdb.asia-southeast1.firebasedatabase.app',
+    projectId: 'courseminder-dev',
+    storageBucket: 'courseminder-dev.appspot.com',
+    messagingSenderId: '274860730108',
+    appId: '1:274860730108:web:b7f706a51ee7a79dbd1979',
+    measurementId: 'G-1T6H3BFHRR',
+};
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
 
     const modalStore = getModalStore();
     const semStore = SemStore.get();
+    
 
     function computeGWA() {
         let totalUnits = 0;

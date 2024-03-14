@@ -1,9 +1,10 @@
 import { AddSem, Semester, Subject } from '$lib/models/types';
 import { get as getStore, writable } from 'svelte/store';
 import { initializeApp } from 'firebase/app';
-import { get as getFirebase, getDatabase, ref, set, type DatabaseReference } from 'firebase/database';
+import { get as getFirebase, getDatabase, ref, set as setFirebase, type DatabaseReference } from 'firebase/database';
 import { studentId } from '$lib/stores/CurriculumStores'
 import { getContext, hasContext, setContext } from 'svelte';
+// import { parse } from 'path';
 
 const SEMESTER = Symbol('semester');
 
@@ -45,26 +46,48 @@ function initStore() {
 
     async function writeSemesterData(semesterRef : DatabaseReference, obg : Semester){
         if (!(await isExistingSemester(semesterRef))){
-            set(semesterRef, obg);
+            return setFirebase(semesterRef, {
+                id: obg.id,
+                details: obg.details,
+                subjects: obg.subjects,
+            });
         }else {
             throw new Error('Semester already exists');
         }
     }
 
-    function addSem({ sem, year }: AddSem) {
+    function parseSemesterId(id: string) {
+        const semString : string[]= id.split(' ');
+        let semId = ''
+        if (semString.length === 2){
+            const startYear = semString[1].split('-')[0];
+            const endYear = semString[1].split('-')[1];
+            const acadYear = [...startYear][2] + [...startYear][3] + [...endYear][2] + [...endYear][3]; // 2021-2022 -> 2122
+            semId = acadYear + 'M'; // 2122M (2021-2022 Midyear) 
+        } else {
+            const startYear = semString[2].split('-')[0];
+            const endYear = semString[2].split('-')[1];
+            const acadYear = [...startYear][2] + [...startYear][3] + [...endYear][2] + [...endYear][3]; // 2021-2022 -> 2122
+            semId = semString[0] === '1st' ? acadYear + 'A' : acadYear + 'B'; // 21221A (2021-2022 1st Semester) or 21222B (2021-2022 2nd Semester)
+        }
+        return semId;
+    }
+
+    async function addSem({ sem, year }: AddSem) {
         const obg : Semester = {
             id: `${sem} ${year}`,
             details: {
                 sem,
                 year,
-                gwa: null,
-                units: null,
+                gwa: 0,
+                units: 0,
             },
             subjects: [],
         };
-        const semesterRef = ref(db, `semesterData/${studentnumber}/${obg.id}`);
+        const semId = parseSemesterId(obg.id);
+        const semesterRef = ref(db, `semesterData/${studentnumber}/${semId}`);
         console.log('got semester reference')
-        writeSemesterData(semesterRef, obg);                  
+        await writeSemesterData(semesterRef, obg);                  
         update((store) => [...store, obg]);
     }
 
