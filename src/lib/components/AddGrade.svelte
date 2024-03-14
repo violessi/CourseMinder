@@ -1,44 +1,42 @@
 <script lang="ts">
+    import { Subject } from '$lib/models/types';
     import type { SvelteComponent } from 'svelte';
-
-    // Stores
     import { getModalStore } from '@skeletonlabs/skeleton';
+    import { safeParse } from 'valibot';
 
-    import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-    import { SemType } from '$lib/models/types';
-    // Props
-    /** Exposes parent props to this component. */
+    // eslint-disable-next-line init-declarations
     export let parent: SvelteComponent;
 
     const modalStore = getModalStore();
 
     // Form Data
-    const formData = {
-        className: null,
-        grade: null,
-        units: null,
+    const formData: Subject = {
+        className: 'null',
+        grade: 0,
+        units: 0,
     };
 
     let message = '';
-    let gradesArray = ['1.0', '1.25', '1.5', '1.75', '2.0', '2.25', '2.5', '2.75', '3.0', '4.0', '5.0'];
+    const gradesArray = [1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 4.0, 5.0];
 
-    // We've created a custom submit function to pass the response and close the modal.
-    function onFormSubmit(): void {
-        if ($modalStore[0].response) $modalStore[0].response(formData);
-        modalStore.close();
-    }
-
-    const handleSubmit = (e: Event) => {
+    function handleSubmit(e: Event) {
         if (!formData.className || !formData.grade || !formData.units) {
             e.preventDefault();
             message = 'Please fill out all fields.';
         } else if (!gradesArray.includes(formData.grade)) {
             e.preventDefault();
-            message = 'Invalid grade. Please follow the format of the UP Grading System.';
-        } else {
-            onFormSubmit();
+            message = 'Invalid grade. Please follow the UP Grading System format.';
         }
-    };
+
+        const res = safeParse(Subject, formData);
+        if (res.success) {
+            if ($modalStore[0].response) $modalStore[0].response(formData);
+            modalStore.close();
+        } else {
+            e.preventDefault();
+            message = 'Invalid input.';
+        }
+    }
 
     // Base Classes
     const cBase =
@@ -69,7 +67,7 @@
                     <div class="w-1/4">Grade:</div>
                     <input
                         class="input"
-                        type="text"
+                        type="number"
                         bind:value={formData.grade}
                         required
                         placeholder="Enter class grade..."
@@ -79,7 +77,7 @@
                     <div class="w-1/4">Units:</div>
                     <input
                         class="input"
-                        type="text"
+                        type="number"
                         bind:value={formData.units}
                         required
                         placeholder="Enter class units..."
@@ -94,7 +92,7 @@
         <!-- prettier-ignore -->
         <footer class="modal-footer {parent.regionFooter}">
 			<button class="btn {parent.buttonNeutral}" on:click={modalStore.close}>{parent.buttonTextCancel}</button>
-			<button class="btn {parent.buttonPositive}" on:click={handleSubmit}>Done</button>
+			<button class="btn {parent.buttonPositive}" on:click={(e) => handleSubmit(e)}>Done</button>
 		</footer>
     </div>
 {/if}

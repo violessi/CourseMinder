@@ -1,4 +1,4 @@
-import { type Output, array, enum_, nullable, number, object, safeInteger, string, toUpperCase } from 'valibot';
+import { type Output, array, enum_, nullable, number, object, pick, safeInteger, string, toUpperCase } from 'valibot';
 
 export enum SemType {
     first = '1st Semester',
@@ -14,19 +14,20 @@ export const SemDetails = object({
 });
 export type SemDetails = Output<typeof SemDetails>;
 
-export const Subjects = array(
-    object({
-        className: string([toUpperCase()]),
-        grade: number(),
-        units: number([safeInteger()]),
-    }),
-);
-export type Subjects = Output<typeof Subjects>;
+export const Subject = object({
+    className: string([toUpperCase()]),
+    grade: number(),
+    units: number([safeInteger()]),
+});
+
+export type Subject = Output<typeof Subject>;
 
 export const Semester = object({
     id: string(),
     details: SemDetails,
-    subjects: Subjects,
+    subjects: array(Subject),
 });
-
 export type Semester = Output<typeof Semester>;
+
+export const AddSem = pick(SemDetails, ['sem', 'year']);
+export type AddSem = Output<typeof AddSem>;

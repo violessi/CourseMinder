@@ -1,8 +1,11 @@
-import { SemDetails, Semester, Subjects } from '$lib/models/types';
-import { writable } from 'svelte/store';
+import { AddSem, Semester, Subject } from '$lib/models/types';
+import { get as getStore, writable } from 'svelte/store';
 import { initializeApp } from 'firebase/app';
-import { get, getDatabase, ref, set, type DatabaseReference } from 'firebase/database';
+import { get as getFirebase, getDatabase, ref, set, type DatabaseReference } from 'firebase/database';
 import { studentId } from '$lib/stores/CurriculumStores'
+import { getContext, hasContext, setContext } from 'svelte';
+
+const SEMESTER = Symbol('semester');
 
 const firebaseConfig = {
     apiKey: 'AIzaSyCmwpRzGyoeD-Xuh6Cuh1Agbsxw31Uekhk',
@@ -31,7 +34,7 @@ function initStore() {
 
     async function isExistingSemester(semesterRef : DatabaseReference) {
         // Check if data for the semester already exists
-        const snapshot = await get(semesterRef);
+        const snapshot = await getFirebase(semesterRef);
         if (snapshot.exists()) {
             return true;
         } else {
@@ -39,7 +42,7 @@ function initStore() {
         }
     }
 
-    async function writeSemesterData(semesterRef, obg){
+    async function writeSemesterData(semesterRef : DatabaseReference, obg : Semester){
         if (!(await isExistingSemester(semesterRef))){
             set(semesterRef, obg);
         }else {
@@ -47,9 +50,9 @@ function initStore() {
         }
     }
 
-    function add({ sem, year }: Omit<SemDetails, 'gwa' | 'units'>) {
+    function addSem({ sem, year }: AddSem) {
         const obg = {
-            id: `${sem}:${year}`,
+            id: `${sem} ${year}`,
             details: {
                 sem,
                 year,
@@ -63,32 +66,39 @@ function initStore() {
         update((store) => [...store, obg]);
     }
 
-    function getSem(id: string): Semester {
-        const res = get(store).find((s) => s.id === id);
-        if (typeof res === 'undefined') throw new Error('Semester not found');
-        return res;
+    function getSem(id: string) {
+        return getStore(store).find((s) => s.id === id);
     }
 
-    function computeGWA(id: string) {
-        update((store) => {
-            const sem = getSem(id);
-            const totalUnits = sem.subjects.reduce((acc, cur) => Number(acc) + Number(cur.units), 0);
-            const totalGrade = sem.subjects.reduce(
-                (acc, cur) => Number(acc) + Number(cur.grade) * Number(cur.units),
-                0,
-            );
-            sem.details.units = totalUnits;
-            const res = totalGrade / totalUnits;
-            res.toFixed(4);
-            sem.details.gwa = res;
-            return store;
-        });
+    function computeGWA(subjects: Subject[]) {
+        let totalUnits = 0;
+        let totalGrade = 0;
+        for (const subj of subjects) {
+            totalUnits += subj.units;
+            totalGrade += subj.grade * subj.units;
+        }
+        const gwa = totalGrade / totalUnits;
+        return gwa;
     }
 
-    function addsubject(id: string, subject: Subjects[0]) {
+    function computeUnits(subjects: Subject[]) {
+        let totalUnits = 0;
+        for (const subj of subjects) totalUnits += subj.units;
+        return totalUnits;
+    }
+
+    function addSubject({ className, grade, units }: Subject, id: string) {
         update((store) => {
-            const sem = getSem(id);
-            sem.subjects.push(subject);
+            const sem = store.find((s) => s.id === id);
+            if (typeof sem === 'undefined') throw new Error('Semester not found');
+
+            // check if subject already exists
+            // const subj = sem.subjects.find((s) => s.className.toLowerCase === className.toLowerCase);
+            // if (typeof subj !== 'undefined') throw new Error('Subject already exists');
+
+            sem.subjects.push({ className, grade, units });
+            sem.details.gwa = computeGWA(sem.subjects);
+            sem.details.units = computeUnits(sem.subjects);
             return store;
         });
     }
@@ -97,11 +107,21 @@ function initStore() {
         subscribe,
         set,
         update,
-        add,
+        addSem,
+        addSubject,
         getSem,
-        addsubject,
         computeGWA,
+        computeUnits,
     };
 }
 
-export const SemesterStore = initStore();
+type Store = ReturnType<typeof initStore>;
+
+export function init() {
+    setContext(SEMESTER, initStore() satisfies Store);
+}
+
+export function get() {
+    if (!hasContext(SEMESTER)) throw new Error('Editing store not initialized');
+    return getContext<Store>(SEMESTER);
+}

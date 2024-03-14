@@ -1,9 +1,9 @@
 <script lang="ts">
+    import { getDatabase, ref, set, get } from 'firebase/database';
+    import { studentId, studentDegree } from '$lib/stores/CurriculumStores';
     import { goto } from '$app/navigation';
     import icon2 from '$lib/assets/icon2.png';
     import { initializeApp } from 'firebase/app';
-    import { getDatabase, ref, set, get } from 'firebase/database';
-    import { studentId, studentDegree } from '../(user)/student/stores';
 
     const firebaseConfig = {
         apiKey: 'AIzaSyCmwpRzGyoeD-Xuh6Cuh1Agbsxw31Uekhk',
@@ -24,7 +24,6 @@
     let studentnumber = '';
     let password = '';
     let errorMessage = '';
-    let valid = true;
 
     async function writeStudentData(studentnumber: string, name: string, degree: string, password: string) {
         const db = getDatabase(app);
@@ -35,7 +34,6 @@
         if (snapshot.exists()) {
             // The student already exists, handle this case as needed
             errorMessage = 'A student with this number already exists.';
-            valid = false;
         } else {
             // The student doesn't exist, write the data
             set(reference, {
@@ -56,7 +54,6 @@
         } else {
             // Handle the case when not all fields are filled
             // You can show an error message or do something else
-            valid = false;
             errorMessage = 'Please fill-up all fields.';
         }
     };

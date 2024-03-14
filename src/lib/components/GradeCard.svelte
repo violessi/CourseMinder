@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Semester } from '$lib/models/types';
-
+    // eslint-disable-next-line init-declarations
     export let data: Semester;
     $: ({ id, details } = data);
     $: ({ sem, year, units, gwa } = details);

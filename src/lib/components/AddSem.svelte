@@ -1,58 +1,44 @@
 <script lang="ts">
-    import type { SvelteComponent } from 'svelte';
-
-    // Stores
-    import { getModalStore } from '@skeletonlabs/skeleton';
-
+    import { AddSem, SemType } from '$lib/models/types';
     import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-    import { SemType } from '$lib/models/types';
-    // Props
-    /** Exposes parent props to this component. */
+    import type { SvelteComponent } from 'svelte';
+    import { getModalStore } from '@skeletonlabs/skeleton';
+    import { safeParse } from 'valibot';
+
+    // eslint-disable-next-line init-declarations
     export let parent: SvelteComponent;
 
+    // eslint-disable-next-line init-declarations
+    const formData: AddSem = {
+        sem: SemType.first,
+        year: '2023-2024',
+    };
     const modalStore = getModalStore();
-
-    // Form Data
-    const formData = {
-        semester: '' as SemType,
-        year: '',
-    };
-
     let message = '';
-    let regex = /[0-9]+-[0-9]+/i;
 
-    // We've created a custom submit function to pass the response and close the modal.
-    function onFormSubmit(): void {
-        if ($modalStore[0].response) $modalStore[0].response(formData);
-        modalStore.close();
-    }
+    function handleSubmit(e: Event) {
+        e.preventDefault();
 
-    const handleSubmit = (e: Event) => {
-        if (!formData.semester || !formData.year) {
-            e.preventDefault();
-            message = 'Please fill out all fields.';
-        } else if (!regex.test(formData.year)) {
-            e.preventDefault();
-            message = 'Invalid academic year. Please use the format "YYYY-YYYY".';
-        } else {
-            onFormSubmit();
+        const res = safeParse(AddSem, formData);
+        if (!formData.year.match(/\d{4}-\d{4}/)) {
+            message = 'Invalid year format. Please follow the YYYY-YYYY format.';
+            return;
         }
-    };
-
-    // Base Classes
-    const cBase =
-        ' p-4 w-modal shadow-xl space-y-4 bg-secondary-400 rounded-container-token border border-tertiary-900';
-    const cHeader = 'text-2xl font-bold text-center';
-    const cForm = 'border border-tertiary-900 p-4 space-y-4 rounded-container-token';
+        if (!formData.sem || !formData.year) {
+            message = 'Please fill out all fields.';
+            return;
+        }
+        if (res.success && $modalStore[0].response) {
+            $modalStore[0].response(res.output);
+            modalStore.close();
+        } else message = 'Invalid input.';
+    }
 </script>
 
-<!-- @component This example creates a simple form modal. -->
-
 {#if $modalStore[0]}
-    <div class="modal-example-form {cBase}">
-        <header class={cHeader}>{$modalStore[0].title ?? '(title missing)'}</header>
-        <!-- Enable for debugging: -->
-        <div class={cForm}>
+    <div class="p-4 w-modal shadow-xl space-y-4 bg-secondary-400 rounded-container-token border border-tertiary-900">
+        <header class="text-2xl font-bold text-center">{$modalStore[0].title ?? '(title missing)'}</header>
+        <div class="border border-tertiary-900 p-4 space-y-4 rounded-container-token">
             <div class="flex place-items-center">
                 <div class="w-1/4">Semester:</div>
                 <ListBox
@@ -61,13 +47,12 @@
                     spacing="space-y-0"
                     regionDefault="text-center"
                 >
-                    <ListBoxItem bind:group={formData.semester} name="1st" value={SemType.first}
-                        >{SemType.first}</ListBoxItem
+                    <ListBoxItem bind:group={formData.sem} name="1st" value={SemType.first}>{SemType.first}</ListBoxItem
                     >
-                    <ListBoxItem bind:group={formData.semester} name="2nd" value={SemType.second}
+                    <ListBoxItem bind:group={formData.sem} name="2nd" value={SemType.second}
                         >{SemType.second}</ListBoxItem
                     >
-                    <ListBoxItem bind:group={formData.semester} name="Midyear" value={SemType.midyear}
+                    <ListBoxItem bind:group={formData.sem} name="Midyear" value={SemType.midyear}
                         >{SemType.midyear}</ListBoxItem
                     >
                 </ListBox>
@@ -84,10 +69,9 @@
             <div class="text-error-200 text-center">{message}</div>
         {/if}
 
-        <!-- prettier-ignore -->
         <footer class="modal-footer {parent.regionFooter}">
-			<button class="btn {parent.buttonNeutral}" on:click={modalStore.close}>{parent.buttonTextCancel}</button>
-			<button class="btn {parent.buttonPositive}" on:click={handleSubmit}>Done</button>
-		</footer>
+            <button class="btn {parent.buttonNeutral}" on:click={modalStore.close}>{parent.buttonTextCancel}</button>
+            <button class="btn {parent.buttonPositive}" on:click={handleSubmit}>Done</button>
+        </footer>
     </div>
 {/if}

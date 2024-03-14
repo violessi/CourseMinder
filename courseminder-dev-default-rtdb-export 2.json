@@ -1,0 +1,492 @@
+{
+  "courseMap": {
+    "-NsoUdFnuZpJ9yK4oSyT": "CS 10",
+    "-NsoUdGakLxXewMgW_tU": "CS 11",
+    "-NsoUdHKX7l85568FCZ-": "CS 12",
+    "-NsoUdI1KJjCZHXodFCU": "CS 30",
+    "-NsoUdIkuCShLaeUnx7z": "CS 31",
+    "-NsoUdJTDxPv8HvR1Q_h": "CS 32",
+    "-NsoUdK7mJGZ5Ae7S5ok": "CS 33",
+    "-NsoUdKpFSjWJ3UrWIyI": "CS 20",
+    "-NsoUdLZanldW_-tCjOZ": "CS 21",
+    "-NsoUdMKxMADPYEC7zbA": "CS 140",
+    "-NsoUdMyi9eyrnUtLZWP": "CS 145",
+    "-NsoUdNg2z1YhxxzWPYp": " CS 165",
+    "-NsoUdOOhtRfP2mjPoJi": "CS 132",
+    "-NsoUdP7Vlt-LSQW6vWp": "CS 136",
+    "-NsoUdPon0tTVhF-sXLh": "CS 138",
+    "-NsoUdQUeh1VsGhkFeZU": "CS 150",
+    "-NsoUdRChN9GlS6uBL3E": "CS 153",
+    "-NsoUdRtMP1RHNbtTkjx": "CS 155",
+    "-NsoUdSd2c7vIgYRD6oe": "CS 191",
+    "-NsoUdTLMzeRsvybigku": "CS 192",
+    "-NsoUdU4drgd3vo9kE2_": "CS 133",
+    "-NsoUdUmYGL5kxS7TkdJ": "CS 180",
+    "-NsoUdVZ-ZGlIQdmHmnH": "CS Elective",
+    "-NsoUdWFK7t3nrmoh4UD": "CS 194",
+    "-NsoUdWx5Z1Wu8N6B4FC": "CS 195",
+    "-NsoUdXg1i25MvVAThdu": "CS 196",
+    "-NsoUdYOlgrlgS_z5Bk5": "CS 198",
+    "-NsoUdZ7wsCtDGOejAF-": "CS 199",
+    "-NsoUdZww1tHFEU-n6ye": "Math 21",
+    "-NsoUd_eid_vObmgI-hD": "Math 22",
+    "-NsoUdaORax6z2jMbE7k": "Math 23",
+    "-NsoUdb46ctHPw5JLKMs": "Math 40",
+    "-NsoUdbo1TBu3eWAHx2-": "Physics 71",
+    "-NsoUdcVql1K_d7tYHmm": "Physics 72",
+    "-NsoUddBRE7UTbTw1bOA": "Kas 1",
+    "-NsoUddslSCtXoGzk4xy": "Philo 1",
+    "-NsoUdeZAolwG6lvFX68": "Soc Sci 1/2",
+    "-NsoUdfF_MdTsICkASjC": "Eng 13",
+    "-NsoUdfz5pymennwNs_d": "Eng 30",
+    "-NsoUdgg8kttdPJMEAEM": "Speech 30",
+    "-NsoUdhMSeaDD9WunNMi": "Fil 40",
+    "-NsoUdhykn-fQypppSkS": "Engg 150",
+    "-NsoUdibjWNlHrdEvBGV": "Free Elective",
+    "-NsoUdjKunXplsxU3DYc": "GE Elective",
+    "-NsoUdk0-HdLALI1GihN": "STS 1/DRMAPS",
+    "-NsoUdkkHs4LRExiAYOM": "PI 100",
+    "-NsoUdlSFPGxBd3C0ig5": "Arts 1",
+    "-NsoUdm7S4I6ibCHwIEb": "NSTP 1",
+    "-NsoUdmpr2m9RbcUNCn7": "NSTP 2"
+  },
+  "courses": {
+    "-NsoUdFnuZpJ9yK4oSyT": {
+      "coreq": "None",
+      "course": "CS 10",
+      "desc": "Explore the history of computing, delve into the components of a computer, examine data storage methods, and analyze current trends and issues shaping the computing landscape. This course provides a concise overview of foundational concepts essential for understanding the evolution and challenges of computing in today's digital world.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Introduction to Computing"
+    },
+    "-NsoUdGakLxXewMgW_tU": {
+      "coreq": "None",
+      "course": "CS 11",
+      "desc": "This course provides a foundation in Basic Programming, covering fundamental constructs and logic. Students learn programming essentials, including variables, data types, loops, and conditional statements. Through practical exercises, they develop proficiency in problem-solving and algorithmic thinking. By mastering programming logic, students gain the skills needed to analyze, design, and implement solutions to real-world problems.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Computer Programming I"
+    },
+    "-NsoUdHKX7l85568FCZ-": {
+      "coreq": "None",
+      "course": "CS 12",
+      "desc": "This course explores Abstract Data Types and Advanced Programming Techniques, focusing on Exception Handling and Documentation. Students learn to handle errors gracefully and effectively document their code. Additionally, they delve into API programming, mastering techniques to interface with external libraries and services. Through practical exercises, students enhance their programming skills and develop a deeper understanding of software development best practices.",
+      "numUnits": "3.0",
+      "prereq": "CS 11",
+      "title": "Computer Programming II"
+    },
+    "-NsoUdI1KJjCZHXodFCU": {
+      "coreq": "None",
+      "course": "CS 30",
+      "desc": "This course introduces Discrete Structures and their applications in Computer Science. Students explore foundational concepts such as sets, logic, and graph theory. Through practical examples, they learn to apply these structures to analyze algorithms, design data structures, and solve computational problems. By understanding discrete mathematics, students gain essential skills for building efficient and scalable software systems.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Discrete Mathematics for Computer Science I"
+    },
+    "-NsoUdIkuCShLaeUnx7z": {
+      "coreq": "None",
+      "course": "CS 31",
+      "desc": "This course delves into Discrete Structures' applications in advanced computing, Probability, and Topics in Statistics. Students explore advanced topics such as graph theory, combinatorics, and probability theory. Through practical examples, they analyze algorithms and their probabilistic behavior. Additionally, students gain insights into statistical methods applicable to computer science problems. By the course's end, students possess a solid understanding of how discrete structures intersect with probability and statistics in computational contexts.",
+      "numUnits": "4.0",
+      "prereq": "CS 30",
+      "title": "Discrete Mathematics for Computer Science II"
+    },
+    "-NsoUdJTDxPv8HvR1Q_h": {
+      "coreq": "None",
+      "course": "CS 32",
+      "desc": "This course introduces Algorithm Design & Analysis, focusing on Linear Data Structures (Stacks, Queues, Lists, Tables) and their applications in problem-solving. Students explore Sorting and Randomized Algorithms, alongside algorithm analysis techniques including Amortized and Probabilistic analysis. Through practical exercises, students develop the skills to formulate algorithms, solve real-world problems, and analyze algorithmic efficiency.",
+      "numUnits": "4.0",
+      "prereq": "CS 12, CS 31",
+      "title": "Data Structures and Algorithms I"
+    },
+    "-NsoUdK7mJGZ5Ae7S5ok": {
+      "coreq": "None",
+      "course": "CS 33",
+      "desc": "This course covers Trees, Graphs, Algorithms on Graphs, Generalized Lists, Randomized Algorithms, and Probabilistic Analysis. Students explore complex data structures and algorithmic techniques, gaining insight into their applications and performance characteristics. Through theoretical study and practical exercises, students develop proficiency in analyzing and designing algorithms for various problem domains. By the end of the course, students are equipped with the skills needed to tackle advanced computational challenges efficiently and effectively.",
+      "numUnits": "4.0",
+      "prereq": "CS 32",
+      "title": "Data Structures and Algorithms II"
+    },
+    "-NsoUdKpFSjWJ3UrWIyI": {
+      "coreq": "None",
+      "course": "CS 20",
+      "desc": "This course introduces Basic Electronics, covering digital logic design and physical/embedded computing. Students learn the principles of electronic components, Boolean logic, and circuit design. They explore digital systems, including combinational and sequential logic, as well as microcontroller programming for embedded applications. Through hands-on projects, students gain practical experience in designing and implementing electronic circuits and embedded systems.",
+      "numUnits": "3.0",
+      "prereq": "CS 12",
+      "title": "Digital Electronics and Circuits"
+    },
+    "-NsoUdLZanldW_-tCjOZ": {
+      "coreq": "None",
+      "course": "CS 21",
+      "desc": "This course introduces Computer Organization, covering computer architecture and assembly language programming. Students delve into the inner workings of computers, understanding how hardware components interact at the architectural level. Through hands-on assembly language programming exercises, they gain insight into low-level programming concepts and system organization. By the end of the course, students will have a comprehensive understanding of computer architecture and the ability to write efficient assembly language programs.",
+      "numUnits": "4.0",
+      "prereq": "CS 20",
+      "title": "Computer Organization & Architecture"
+    },
+    "-NsoUdMKxMADPYEC7zbA": {
+      "coreq": "None",
+      "course": "CS 140",
+      "desc": "This course explores operating system concepts, from design to analysis, covering virtualization, multiprocessing, and real-time systems. Moreover, it delves into process management, input/output, memory, and file systems design. Learn about virtual machines, hypervisors, and considerations in embedded systems OS design. Throughout this course, the students will gain insights into the complexities of OS implementation and optimization for diverse computing environments.",
+      "numUnits": "4.0",
+      "prereq": "CS 21, CS 32",
+      "title": "Operating Systems"
+    },
+    "-NsoUdMyi9eyrnUtLZWP": {
+      "coreq": "CS 153",
+      "course": "CS 145",
+      "desc": "This course delves into network performance and security essentials, covering layers, protocols, and emerging technologies. Explore the physical, data link, network, transport, and application layers, understanding their roles in optimization and security. Encryption, authentication, and mitigation strategies are discussed alongside emerging technologies like SDN and IoT. After this course, you should have gained the skills to design, deploy, and maintain robust, secure networks in modern environments.",
+      "numUnits": "4.0",
+      "prereq": "CS 140",
+      "title": "Computer Networks"
+    },
+    "-NsoUdNg2z1YhxxzWPYp": {
+      "coreq": "None",
+      "course": " CS 165",
+      "desc": "This course covers relational database concepts including ER modeling, the relational model, and SQL. Students learn database design, normalization, and query optimization. Additionally, topics such as file management, storage, indexing, and transaction management are explored. Introduction to data warehousing and modern database systems is included. Gain practical skills in designing and managing databases for efficient data storage and retrieval.",
+      "numUnits": "4.0",
+      "prereq": "CS 33",
+      "title": "Database Systems"
+    },
+    "-NsoUdOOhtRfP2mjPoJi": {
+      "coreq": "None",
+      "course": "CS 132",
+      "desc": "This course introduces the Data Science Process, emphasizing Data Preprocessing, Storage, and Management. Students explore Statistical Inference, Exploratory Data Analysis, and Machine Learning techniques. Through Data Visualization, they communicate insights effectively. Ethical considerations in Data Science are also discussed throughout.",
+      "numUnits": "3.0",
+      "prereq": "CS 31, Math 23, Math 40",
+      "title": "Introduction to Data Science"
+    },
+    "-NsoUdP7Vlt-LSQW6vWp": {
+      "coreq": "None",
+      "course": "CS 136",
+      "desc": "This course offers a comprehensive introduction to Elementary Differential Equations, Numerical Analysis, Root Finding, and Collocation Methods. Students gain practical skills in solving differential equations, analyzing numerical methods, and implementing root-finding algorithms. Emphasis is placed on understanding the theoretical foundations and applying computational techniques to solve real-world problems efficiently.",
+      "numUnits": "3.0",
+      "prereq": "CS 31, Math 23",
+      "title": "Elementary Numerical Computing I"
+    },
+    "-NsoUdPon0tTVhF-sXLh": {
+      "coreq": "None",
+      "course": "CS 138",
+      "desc": "This course delves into numerical differentiation, integration, partial differential equations, and linear algebra. Students will acquire essential skills in numerical approximation and problem-solving techniques tailored for engineering applications. Emphasis is placed on rigorous theoretical understanding and practical implementation, equipping learners with the proficiency needed to address complex engineering challenges through numerical methods.",
+      "numUnits": "3.0",
+      "prereq": "CS 136, Math 40",
+      "title": "Elementary Numerical Computing II"
+    },
+    "-NsoUdQUeh1VsGhkFeZU": {
+      "coreq": "None",
+      "course": "CS 150",
+      "desc": "This course offers an in-depth examination of programming languages, encompassing their historical evolution and comprehensive overview. Students explore various programming paradigms including imperative, functional, object-oriented, and logic. Topics also include type systems, declaration principles, modularity concepts, and an introduction to syntax and semantics. Through rigorous study, students develop a nuanced understanding of programming language design and implementation.",
+      "numUnits": "3.0",
+      "prereq": "CS 33",
+      "title": "Programming Languages"
+    },
+    "-NsoUdRChN9GlS6uBL3E": {
+      "coreq": "CS 145, CS 192",
+      "course": "CS 153",
+      "desc": "This course explores computer security models, protocols, and cryptographic algorithms. Students analyze security issues and implement digital signatures. Risk assessment methodologies are employed to evaluate and mitigate potential threats. Through theoretical study and practical exercises, students gain proficiency in securing digital systems and data assets.",
+      "numUnits": "3.0",
+      "prereq": "CS 140",
+      "title": "Introduction to Computer Security"
+    },
+    "-NsoUdRtMP1RHNbtTkjx": {
+      "coreq": "None",
+      "course": "CS 155",
+      "desc": "Explore compiler phases, scanners, parsers, and semantic analysis. Learn syntax-directed translation, function, and procedure calls, runtime organization, and register allocation. Study code layout, generation, and garbage collection, with an introduction to optimization. Emphasize error detection, recovery, and language security.",
+      "numUnits": "3.0",
+      "prereq": "CS 21, CS 133, CS 150",
+      "title": "Compiler Construction"
+    },
+    "-NsoUdSd2c7vIgYRD6oe": {
+      "coreq": "CS 150, CS 165",
+      "course": "CS 191",
+      "desc": "Explore key principles of Software Engineering, focusing on Project Management, Requirements Engineering, Analysis, Design Patterns, and Quality Assurance. Gain insight into industry-standard methodologies and practices for developing high-quality software solutions. Develop skills in project planning, requirement elicitation, system analysis, and design, ensuring software meets user needs and quality standards. Through practical exercises and case studies, master techniques for effective software development and maintenance in diverse environments.",
+      "numUnits": "3.0",
+      "prereq": "CS 33",
+      "title": "Software Engineering I"
+    },
+    "-NsoUdTLMzeRsvybigku": {
+      "coreq": "None",
+      "course": "CS 192",
+      "desc": "This course explores the implementation and maintenance of software, focusing on integration strategies and security considerations. Students learn best practices for deploying and managing software systems effectively. Integration strategies cover techniques for seamless interoperability between different software components. Security issues address vulnerabilities and measures to safeguard software assets. Through case studies and practical exercises, students develop the skills needed to ensure the robustness, reliability, and security of software solutions in diverse environments.",
+      "numUnits": "3.0",
+      "prereq": "CS 191",
+      "title": "Software Engineering II"
+    },
+    "-NsoUdU4drgd3vo9kE2_": {
+      "coreq": "None",
+      "course": "CS 133",
+      "desc": "This course explores fundamental concepts in computational theory, including alphabets, words, languages, and algorithmic problem-solving. Topics cover finite automata, the hierarchy of languages, Turing machines, and the distinction between tractable and intractable problems. Students analyze uncomputable functions and confront the complexities of the halting problem. Through rigorous study, they gain insight into the theoretical underpinnings of computing and develop critical thinking skills essential for addressing computational challenges.",
+      "numUnits": "3.0",
+      "prereq": "CS 30",
+      "title": "Automata Theory & Computability"
+    },
+    "-NsoUdUmYGL5kxS7TkdJ": {
+      "coreq": "None",
+      "course": "CS 180",
+      "desc": "This course offers a comprehensive overview of AI fundamentals, covering search methods, knowledge representation & reasoning, and agent-based systems. Students delve into machine learning concepts, including neural networks. Through case studies and discussions, they explore current research applications in various domains. By the course's end, students gain a solid understanding of AI principles and their practical applications.",
+      "numUnits": "3.0",
+      "prereq": "CS 33",
+      "title": "Artificial Intelligence"
+    },
+    "-NsoUdVZ-ZGlIQdmHmnH": {
+      "coreq": "None",
+      "course": "CS 17x",
+      "desc": "This comprehensive program offers an in-depth exploration of specialized areas within the realm of computer science. Students will delve into a range of disciplines including Theoretical Computer Science (171), Net-Centric Computing (172), Software Technology (173), Computer Systems (174), Computational Science (175), and Intelligent Systems (176). Through rigorous study and practical application, students will develop a profound understanding and expertise in various facets of computer science, preparing them for advanced research or professional endeavors in the field.",
+      "numUnits": "3.0",
+      "prereq": "Consent of Instructor (COI)",
+      "title": "CS Elective"
+    },
+    "-NsoUdWFK7t3nrmoh4UD": {
+      "coreq": "None",
+      "course": "CS 194",
+      "desc": "This course provides an overview of research methodologies, topic selection, and LaTeX basics. Students learn to craft literature reviews and present their research effectively. Additionally, they gain insights into each of the DCS Research Laboratories.",
+      "numUnits": "1.0",
+      "prereq": "Junior Standing",
+      "title": "Undergraduate Research Seminar"
+    },
+    "-NsoUdWx5Z1Wu8N6B4FC": {
+      "coreq": "None",
+      "course": "CS 195",
+      "desc": "This course offers hands-on experience through practicum and on-the-job training (OJT) opportunities. Students apply theoretical knowledge in real-world settings, gaining practical skills and industry insights. Under professional supervision, they engage in tasks relevant to their field of study, enhancing employability and professional development. Through reflection and mentorship, students refine their abilities and transition seamlessly into their chosen career paths.",
+      "numUnits": "3.0",
+      "prereq": "CS 192",
+      "title": "Practicum"
+    },
+    "-NsoUdXg1i25MvVAThdu": {
+      "coreq": "None",
+      "course": "CS 196",
+      "desc": "This seminar explores the ethical and professional responsibilities of computing practitioners. Topics include privacy, intellectual property, cybersecurity, and social impact. Through case studies and discussions, students analyze ethical dilemmas and develop strategies for ethical decision-making in computing professions. They examine codes of conduct, legal frameworks, and societal implications, cultivating a deeper understanding of the ethical dimensions of their work.",
+      "numUnits": "1.0",
+      "prereq": "Senior Standing",
+      "title": "Seminar on Ethical & Professional Issues in Computing"
+    },
+    "-NsoUdYOlgrlgS_z5Bk5": {
+      "coreq": "None",
+      "course": "CS 198",
+      "desc": "This course focuses on independent research and scholarly inquiry, guiding students through the process of identifying, analyzing, and solving complex problems within their field of study. Through mentorship and faculty guidance, students develop and execute a thesis project, culminating in a comprehensive written document and oral defense. Emphasis is placed on critical thinking, research methodology, and effective communication of findings. Students emerge with advanced analytical skills and the ability to contribute meaningfully to their discipline through original research.",
+      "numUnits": "3.0",
+      "prereq": "CS 194",
+      "title": "Special Problems I"
+    },
+    "-NsoUdZ7wsCtDGOejAF-": {
+      "coreq": "None",
+      "course": "CS 199",
+      "desc": "Building upon CS 198, this course focuses on Special Problems, culminating in Thesis Defense and submission of the Final Thesis. Students engage in rigorous research, applying theoretical knowledge to address real-world challenges. Through guided mentorship, they develop critical analysis skills, refine research methodologies, and craft a comprehensive thesis. The course culminates in a formal Thesis Defense, where students present their findings to a panel of experts. By successfully completing this course, students demonstrate proficiency in scholarly research and academic writing, preparing them for future endeavors in their chosen field.",
+      "numUnits": "3.0",
+      "prereq": "CS 198",
+      "title": "Special Problems II"
+    },
+    "-NsoUdZww1tHFEU-n6ye": {
+      "coreq": "None",
+      "course": "Math 21",
+      "desc": "This course rigorously examines limits, continuity, and derivatives of both algebraic and transcendental functions, encompassing exponential, logarithmic, trigonometric, and hyperbolic functions. Through systematic study, students delve into the diverse applications of derivatives, as well as antiderivatives and definite integrals. Emphasis is placed on mastering the Fundamental Theorem of Calculus and its practical implications in various fields of science and engineering.",
+      "numUnits": "4.0",
+      "prereq": "High School Basic Calculus from the STEM or equivalent strand of K-12, or Math 20/equiv",
+      "title": "Elementary Analysis I"
+    },
+    "-NsoUd_eid_vObmgI-hD": {
+      "coreq": "None",
+      "course": "Math 22",
+      "desc": "This course delves into advanced integration techniques, addressing improper integrals, parametric equations, and polar coordinates. Topics also include lines in space, planes, cylindrical surfaces, surfaces of revolution, and quadric surfaces. Moreover, students explore vectors, vector-valued functions, as well as sequences and series, establishing a comprehensive understanding of calculus in multidimensional spaces.",
+      "numUnits": "4.0",
+      "prereq": "Math 21",
+      "title": "Elementary Analysis II"
+    },
+    "-NsoUdaORax6z2jMbE7k": {
+      "coreq": "None",
+      "course": "Math 23",
+      "desc": "This course rigorously explores functions of several variables, encompassing limits, continuity, and partial derivatives. Topics include directional derivatives, extrema, double and triple integrals, and their applications. Students delve into vector fields, line integrals, and surface integrals, culminating in a comprehensive understanding of multivariable calculus and its diverse applications across mathematics, physics, and engineering.",
+      "numUnits": "4.0",
+      "prereq": "Math 22",
+      "title": "Elementary Analysis III"
+    },
+    "-NsoUdb46ctHPw5JLKMs": {
+      "coreq": "None",
+      "course": "Math 40",
+      "desc": "This course delves into vector spaces, linear transformations, matrices, eigenvalues, canonical forms, and orthogonality, exploring their theoretical foundations and practical applications. Students master fundamental concepts while gaining proficiency in solving problems across various disciplines.",
+      "numUnits": "3.0",
+      "prereq": "Math 22/equiv or Math 30/equiv",
+      "title": "Linear Algebra"
+    },
+    "-NsoUdbo1TBu3eWAHx2-": {
+      "coreq": "None",
+      "course": "Physics 71",
+      "desc": "This course offers a comprehensive examination of the mechanics governing particles, rigid bodies, and fluids. Topics include the kinematics and dynamics of particles, the motion and equilibrium of rigid bodies, and the behavior of fluids under different conditions. Through theoretical study and practical applications, students develop a deep understanding of the fundamental principles and laws governing these systems, preparing them for advanced studies in engineering and physics.",
+      "numUnits": "4.0",
+      "prereq": "None",
+      "title": "Elementary Physics I"
+    },
+    "-NsoUdcVql1K_d7tYHmm": {
+      "coreq": "None",
+      "course": "Physics 72",
+      "desc": "This course delves into the principles of electricity, magnetism, wave phenomena, and optics. Topics include the fundamental laws of electromagnetism, Maxwell's equations, wave propagation, interference, diffraction, polarization, and optical systems. Through theoretical exploration and practical applications, students gain a comprehensive understanding of these phenomena and their relevance in various scientific and technological disciplines.",
+      "numUnits": "4.0",
+      "prereq": "Physics 71",
+      "title": "Elementary Physics II"
+    },
+    "-NsoUddBRE7UTbTw1bOA": {
+      "coreq": "None",
+      "course": "Kas 1",
+      "desc": "This course meticulously examines the political, economic, and socio-cultural advancements within the Philippines. Through comprehensive analysis, students explore the dynamic evolution of political structures, economic policies, and cultural paradigms. Emphasis is placed on understanding the intricate interplay between these domains and their impact on contemporary Philippine society.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Kasaysayan ng Pilipinas"
+    },
+    "-NsoUddslSCtXoGzk4xy": {
+      "coreq": "None",
+      "course": "Philo 1",
+      "desc": "This course synthesizes fundamental concepts from the Philosophy of Language, Symbolic Logic, Epistemology, Philosophy of Science, and Ethics. Students engage in rigorous exploration and application of these principles, developing critical thinking skills essential for ethical decision-making and philosophical inquiry. Topics include language analysis, logical reasoning, scientific methodology, and moral dilemmas.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Philosophical Analysis"
+    },
+    "-NsoUdeZAolwG6lvFX68": {
+      "coreq": "None",
+      "course": "Soc Sci 1/2",
+      "desc": "(Soc Sci 1) Social science as an integrated discipline, its contribution to knowledge production, its distinctive research practice, and its relevance to social development.  (Soc Sci 2) This course provides a comprehensive examination of social, economic, and political ideologies spanning classical to contemporary eras. Students analyze seminal works, theories, and thinkers that have shaped societal structures and governance paradigms throughout history. Through critical inquiry and contextual analysis, students gain a nuanced understanding of the evolution of ideas in these domains, enabling them to discern the complexities of past and present socio-political landscapes.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "(Soc Sci 1) Foundations of Social Science/(Soc Sci 2) Social, Economic and Political Thought"
+    },
+    "-NsoUdfF_MdTsICkASjC": {
+      "coreq": "None",
+      "course": "Eng 13",
+      "desc": "This university-level foundation course cultivates critical thinking, reading, and writing skills in English. Through structured analysis and interpretation, students engage with diverse texts to develop effective written communication. Emphasis is placed on constructing coherent arguments, synthesizing information, and fostering analytical reasoning.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Writing as Thinking"
+    },
+    "-NsoUdfz5pymennwNs_d": {
+      "coreq": "None",
+      "course": "Eng 30",
+      "desc": "This course elucidates the principles and applications of English writing within diverse disciplines and professions. Students analyze effective writing strategies tailored to specific fields, cultivating proficiency in technical, academic, and professional communication. Through critical evaluation and practical exercises, they refine their writing skills to meet the standards and expectations of their respective disciplines, ensuring clarity, coherence, and precision in their written work.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "English for the Professions"
+    },
+    "-NsoUdgg8kttdPJMEAEM": {
+      "coreq": "None",
+      "course": "Speech 30",
+      "desc": "This course focuses on mastering persuasion techniques across diverse public speaking contexts. Students learn strategic approaches to influence and engage audiences effectively. Through analysis of rhetorical strategies and hands-on practice, students refine their persuasive communication skills. Topics include audience analysis, argumentation, credibility, and ethical persuasion.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Public Speaking and Persuasion"
+    },
+    "-NsoUdhMSeaDD9WunNMi": {
+      "coreq": "None",
+      "course": "Fil 40",
+      "desc": "This course elucidates the significance of sociolinguistic phenomena, analyzing the interplay of language, culture, and society within the Filipino context. Students examine the nature of the Filipino language as both a national lingua franca and a language of identity, ensuring a deep understanding of its role in national discourse and cultural identity.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Wika, Kultura, at Lipunan"
+    },
+    "-NsoUdhykn-fQypppSkS": {
+      "coreq": "None",
+      "course": "Engg 150",
+      "desc": "This course delves into the fundamentals of technology entrepreneurship, encompassing intellectual property, industry creation, and strategic technology management. Students learn to identify and evaluate opportunities, develop robust business models, and effectively manage ventures. Emphasis is placed on fostering entrepreneurial mindset and strategic decision-making to navigate the dynamic landscape of technology-driven markets.",
+      "numUnits": "3.0",
+      "prereq": "Senior Standing",
+      "title": "Introduction to Technology Entrepreneurship"
+    },
+    "-NsoUdibjWNlHrdEvBGV": {
+      "coreq": "None",
+      "course": "Free Elective",
+      "desc": "It depends on the chosen course.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Any non-CS, non-GE Course"
+    },
+    "-NsoUdjKunXplsxU3DYc": {
+      "coreq": "None",
+      "course": "GE Elective",
+      "desc": "It depends on the chosen GE Course.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Any GE Course"
+    },
+    "-NsoUdk0-HdLALI1GihN": {
+      "coreq": "None",
+      "course": "STS 1/DRMAPS",
+      "desc": "(STS 1) An introductory exploration of the past, present and future of science and technology in society (including their nature, scope, role and function) and the social, cultural, political, economic and environmental factors affecting the development of science and technology, and how society affects these, with emphasis on the Philippine setting. (DRMAPS) Introduction to principles and practices of natural disaster risk management by mitigation of, adaptation to, and preparedness for risk, through all related disciplines aiming for resilience.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "(STS 1) Science, Technology and Society/(DRMAPS) Disaster Risk Mitigation, Adaptation, and Preparedness Strategies"
+    },
+    "-NsoUdkkHs4LRExiAYOM": {
+      "coreq": "None",
+      "course": "PI 100",
+      "desc": "This course delves into the profound impact of Jose Rizal's life and writings on the Filipino people. Through meticulous analysis, students explore the historical, cultural, and sociopolitical significance of Rizal's contributions. Topics include Rizal's advocacy for social reform, his literary works, and their enduring influence on Philippine society. Students examine Rizal's role as a nationalist icon and evaluate the relevance of his ideals in contemporary Filipino life.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "The Life and Works of Jose Rizal"
+    },
+    "-NsoUdlSFPGxBd3C0ig5": {
+      "coreq": "None",
+      "course": "Arts 1",
+      "desc": "This course conducts a rigorous examination of the experience, language, and contextual framework of art. Through critical analysis, students explore the multifaceted dimensions of artistic expression and its interaction with cultural, historical, and social contexts. Emphasis is placed on developing a nuanced understanding of art theory and criticism, enabling students to articulate informed perspectives on the aesthetic, philosophical, and socio-political implications of artistic practices.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "Critical Perspectives in the Arts"
+    },
+    "-NsoUdm7S4I6ibCHwIEb": {
+      "coreq": "None",
+      "course": "NSTP 1",
+      "desc": "Within the National Service Training Program (NSTP), this course cultivates personal development and social responsibility. Participants delve into understanding the self and others, while upholding human dignity and rights, adhering to the UP Anti-Sexual Harassment (ASH) Code. Engagements encompass gender development, citizenship training, and disaster risk reduction management (DRRM), complemented by basic life-saving skills and environmental protection initiatives. Integral to the program are drug education, community engagement, and volunteerism, fostering a sense of duty and active participation in national and community endeavors.",
+      "numUnits": "3.0",
+      "prereq": "None",
+      "title": "National Service Training Program 1"
+    },
+    "-NsoUdmpr2m9RbcUNCn7": {
+      "coreq": "None",
+      "course": "NSTP 2",
+      "desc": "Building upon the foundations laid in NSTP 1, this course deepens students' understanding and engagement with community development and service. Through experiential learning and reflection, students apply theoretical knowledge to address real-world challenges facing communities. Emphasis is placed on enhancing leadership skills, cultural competence, and ethical decision-making in service-oriented contexts. Topics include sustainable development, social justice advocacy, and effective collaboration with community stakeholders. By actively participating in community projects, students develop a heightened sense of civic responsibility and contribute meaningfully to societal well-being.",
+      "numUnits": "3.0",
+      "prereq": "NSTP 1",
+      "title": "National Service Training Program 2"
+    }
+  },
+  "faculty": "",
+  "students": {
+    "201912345": {
+      "degree": "Civil Engineering",
+      "name": "Masayuki Inukai",
+      "password": "password",
+      "studentid": "201912345"
+    },
+    "202023456": {
+      "degree": "Computer Science",
+      "name": "Hehe hatdog",
+      "password": "1234567890",
+      "studentid": "202023456"
+    },
+    "202102502": {
+      "degree": "Computer Science",
+      "name": "Masayuki Inukai",
+      "password": "password",
+      "studentid": "202102502"
+    },
+    "202202502": {
+      "degree": "Computer Science",
+      "name": "Masayuki Inukai",
+      "password": "password",
+      "studentid": "202202502"
+    },
+    "2020-03657": {
+      "degree": "Computer Science",
+      "name": "Bea Yukdawan",
+      "password": "1234567890",
+      "studentid": "2020-03657"
+    },
+    "2020-09876": {
+      "degree": "Computer Science",
+      "name": "Bea Yukdawan",
+      "password": "1234567890",
+      "studentid": "2020-09876"
+    },
+    "2020-12345": {
+      "degree": "Computer Science",
+      "name": "Bea Yukdawan",
+      "password": "1234567890",
+      "studentid": "2020-12345"
+    }
+  }
+}
