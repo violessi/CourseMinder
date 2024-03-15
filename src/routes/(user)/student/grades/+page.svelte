@@ -6,7 +6,9 @@
     import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
     import AddSem from '$lib/components/AddSem.svelte';
     import { initializeApp } from 'firebase/app';
-    import { getDatabase } from 'firebase/database';
+    import { getDatabase, onValue, ref,  } from 'firebase/database';
+    import { studentId } from '$lib/stores/CurriculumStores'
+
 
     const firebaseConfig = {
     apiKey: 'AIzaSyCmwpRzGyoeD-Xuh6Cuh1Agbsxw31Uekhk',
@@ -23,6 +25,12 @@
 
     const modalStore = getModalStore();
     const semStore = SemStore.get();
+
+    // Get copy of student Id
+    let studentnumber = '';
+    studentId.subscribe((value) => {
+        studentnumber = value;
+    });
     
 
     function computeGWA() {
@@ -81,6 +89,17 @@
     $: honor = computeHonor(GWA);
 
     $: console.log($semStore);
+
+    const semesterRef = ref(db, `semesterData/${studentnumber}/`);
+    onValue(semesterRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+            const semesters = Object.keys(data).map(key => data[key]);
+            semStore.set(semesters);
+        } else {
+            console.log('No data available');
+        }
+        });
 </script>
 
 <div class="h-full m-10 space-y-10">

@@ -88,7 +88,7 @@ function initStore() {
         const semesterRef = ref(db, `semesterData/${studentnumber}/${semId}`);
         console.log('got semester reference')
         await writeSemesterData(semesterRef, obg);                  
-        update((store) => [...store, obg]);
+        // update((store) => [...store, obg]);
     }
 
     function getSem(id: string) {
